@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mActivity.DetailActivity"
+    android:background="#202020">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topBar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"
+            app:titleTextColor="#FFCA42" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/bungkusDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:layout_below="@id/appBarLayout2">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone"
+            android:layout_centerInParent="true"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bungkusAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="50dp"
+            android:background="#202020"
+            app:strokeWidth="1dp"
+            app:strokeColor="#FFCA42">
+            <ImageView
+                android:id="@+id/avatarImageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_launcher_background"
+                android:scaleType="centerCrop"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/tvFollowers"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/bungkusAvatar"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/bungkusAvatar"
+            android:text="@string/nilaiAwalFollow"
+            android:textAlignment="center"
+            android:textColor="#FFCA42"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvFollowing"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvFollowers"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/tvFollowers"
+            android:text="@string/nilaiAwalFollow"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#FFCA42"/>
+
+        <TextView
+            android:id="@+id/txtFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFollowers"
+            android:layout_alignStart="@+id/tvFollowers"
+            android:layout_alignEnd="@+id/tvFollowers"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/followerstv"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/txtFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvFollowing"
+            android:layout_alignStart="@+id/tvFollowing"
+            android:layout_alignEnd="@+id/tvFollowing"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/followingtv"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bungkusAvatar"
+            android:layout_alignStart="@+id/bungkusAvatar"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/namatv"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tvNama"
+            android:layout_alignBottom="@+id/tvNama"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/tvNama"
+            android:text="@string/usernametv"
+            android:textColor="#FFCA42"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bungkusDetail">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="1dp"
+            app:tabIndicatorColor="#FFFFFF"
+            app:tabTextColor="@android:color/white"
+            tools:ignore="SpeakableTextPresentCheck"
+            />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_below="@id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/baseline_favorite_border_24"
+        app:fabSize="normal"
+        app:backgroundTint="#FFCA42"
+        app:tint="#202020"
+        app:rippleColor="#FFCA42"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        tools:ignore="SpeakableTextPresentCheck"/>
+
+</RelativeLayout>
